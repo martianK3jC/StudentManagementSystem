@@ -1,0 +1,7 @@
+# These files are not included when uploading files in github
+
+main.exe
+main.o
+student_management_system.layout
+student_management_system.exe
+Makefile.win
