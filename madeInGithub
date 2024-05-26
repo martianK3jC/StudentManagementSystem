@@ -1,0 +1,8 @@
+#include <sdtio.h>
+int main(){
+
+printf("Interesting");
+
+
+return 0;
+}
