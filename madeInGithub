@@ -3,6 +3,8 @@ int main(){
 
 printf("Interesting");
 
-
+printf("right now I'm writing this line in notepad")
+// I typed notepad .\madeInGithub in powershell
+//i wanna watch Rob-B-Hood
 return 0;
 }
