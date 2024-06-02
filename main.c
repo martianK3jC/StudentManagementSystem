@@ -1,25 +1,77 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "student.h"
+#include "manage_student.h"
+#include "mainMenu.h"
+
+void addStudent(struct Student students[], int *studentCount) {
+    struct Student newStudent;
+
+    printf("\n\nEnter student name: ");
+    scanf(" %[^\n]%*c", newStudent.name);
+
+    printf("Enter student age: ");
+    scanf("%d", &newStudent.age);
+
+
+    printf("Enter student ID: ");
+    scanf("%d", &newStudent.id);
+
+    printf("Enter student degree: ");
+    scanf(" %[^\n]%*c", newStudent.degree);
+
+    printf("Enter student address: ");
+    scanf(" %[^\n]%*c", newStudent.address);
+
+    printf("Enter student email: ");
+    scanf("%99s", newStudent.email);
+
+    students[*studentCount] = newStudent;
+    (*studentCount)++;
+
+    printf("Student added successfully!\n");
+}
+
+void viewStudents(struct Student students[], int studentCount) {
+    printf("List of Students:\n\n");
+
+    for (int i = 0; i < studentCount; i++) {
+        printf("Name: %s\n", students[i].name);
+        printf("Age: %d\n", students[i].age);
+        printf("Id: %d\n", students[i].id);
+        printf("Degree: %s\n", students[i].degree);
+        printf("Address: %s\n", students[i].address);
+        printf("Email: %s\n", students[i].email);
+        printf("\n");
+    }
+}
+
+
 
 int main() {
-    int n, i, j, spaces;
+    struct Student students[100];
+    int studentCount = 0;
+    int choice;
 
-    printf("Enter the number: ");
-    scanf("%d", &n);
+    while (1) {
+        mainMenu();
 
-    // Calculate maximum number of spaces needed
-    spaces = n * (n + 1) / 2;
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        
 
-    for (i = 1; i <= n; i++) {
-        // Print leading spaces
-        for (j = 1; j <= spaces - i * (i + 1) / 2; j++) {
-            printf(" ");
+        switch (choice) {
+            case 1:
+                addStudent(students, &studentCount);
+                break;
+            case 2:
+                viewStudents(students, studentCount);
+                break;
+            case 7:
+                exit(0);
+            default:
+                printf("Invalid choice! Please try again.\n");
         }
-
-        // Print numbers from 1 to i
-        for (j = 1; j <= i; j++) {
-            printf("%d ", i * j);
-        }
-        printf("\n");
     }
 
     return 0;
