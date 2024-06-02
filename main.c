@@ -1,4 +1,7 @@
+#include <windows.h>
+#include <unistd.h>
 #include <stdio.h>
+<<<<<<< HEAD
 #include <stdlib.h>
 #include "student.h"
 #include "manage_student.h"
@@ -75,4 +78,17 @@ int main() {
     }
 
     return 0;
+=======
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include "manage_student.h"
+#include "mainMenu.h"
+
+int main(){
+mainMenu();
+	
+viewStudents();	
+
+>>>>>>> origin/add-student
 }
