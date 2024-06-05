@@ -40,11 +40,11 @@ int main(void) {
                 break;
             default:
             	getchar();
-                printf("Invalid choice! Please try again.\n");
+                printf("Huey! Invalid choice (T^T)\nPlease try again.\n");
                 break;
         }
         
-        printf("\nPress any key to continue: ");
+        printf("\nPress enter to continue: ");
         getchar();
 		clearScreen();
     }
