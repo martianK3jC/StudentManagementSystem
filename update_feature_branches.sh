@@ -16,6 +16,7 @@ feature_branches=(
     "struct-student"
     "update-student"
     "view-students"
+    "user-interface"
 )
 
 for branch in "${feature_branches[@]}"; do
