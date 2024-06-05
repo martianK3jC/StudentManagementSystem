@@ -1,34 +1,51 @@
+#include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "student.h"
-#include "manage_student.h"
-#include "mainMenu.h"
+#include <conio.h>
 
+//#include "manage_student.h"
+#include "ui.h"
+//#include "add_Student.h"
+#include "clear_Screen.h"
 
-int main() {
-    struct Student students[100];
-    int studentCount = 0;
-    int choice;
+int main(void) {
+    int choice = 0;
 
-    while (1) {
+    while (choice != 6) {
         mainMenu();
-
-        printf("Enter your choice: ");
+        printf("\nEnter your choice: ");
         scanf("%d", &choice);
         
+        clearScreen();
 
-        switch (choice) {
-            case 1:
-                addStudent(students, &studentCount);
-                break;
-            case 2:
-                viewStudents(students, studentCount);
-                break;
-            case 7:
-                exit(0);
-            default:
-                printf("Invalid choice! Please try again.\n");
-        }
+       switch(choice){
+			case 1:
+				addStudent();
+				break;
+			case 2:
+				//	displayStudent();
+				break;
+			case 3:
+				//	searchStudent();
+				break;
+			case 4:
+				//	editStudent();
+				break;
+			case 5:
+				//	deleteStudent();
+				break;
+			case 6:
+				printf("Thank you for using this system! ☺");
+				exit(0);
+				break;
+			default:
+				printf("Invalid Choice, idiot!\n");
+				break;		
+	}
+        printf("\nPress enter to continue: ");
+        getchar();
+        getchar();
+        clearScreen();
     }
 
     return 0;
