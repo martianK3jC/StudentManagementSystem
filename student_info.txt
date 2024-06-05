@@ -6,3 +6,19 @@ Age: 19
 Address: wonderland
 Email: eh@gmail.com
 ------------------------
+First Name: Kesha
+Last Name: Ceniza
+Student ID: 232335330
+Degree: Cpe
+Age: 19
+Address: CUUUUUUUUURVA
+Email: ekanlfnlajnfla
+------------------------
+First Name: kesha
+Last Name: jj
+Student ID: 0
+Degree: kop
+Age: 9
+Address: ko
+Email: ko
+------------------------

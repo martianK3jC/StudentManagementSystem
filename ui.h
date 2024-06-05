@@ -1,5 +1,7 @@
 //Menu
 #include <stdio.h>
+#include <stdlib.h>
+
 void mainMenu()
 {
 	printf("STUDENT MANAGEMENT SYSTEM\n");
@@ -11,4 +13,13 @@ void mainMenu()
 	printf("[5] Delete Student/s\n");
 	printf("[6] User Guidelines\n");
 	printf("[7] Exit\n");
+}
+ 
+ 
+ void clearScreen() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
 }
