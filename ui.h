@@ -11,8 +11,7 @@ void mainMenu()
 	printf("[3] Search Student\n");
 	printf("[4] Update Student Information\n");
 	printf("[5] Delete Student/s\n");
-	printf("[6] User Guidelines\n");
-	printf("[7] Exit\n");
+	printf("[6] Exit\n");
 }
  
  

@@ -23,15 +23,23 @@ int main(void) {
                 addStudent(students, &studentCount);                
                 break;
             case 2:
-                displayStudents(students, studentCount);
+            	getchar();
+            	printf("We are still working on this!\nPlease come back later!");
+                //displayStudents(students, studentCount);
                 break;
             case 3:
+            	getchar();
+            	printf("We are still working on this!\nPlease come back later!");
             	//searchStudent();
             	break;
             case 4:
+            	getchar();
+            	printf("We are still working on this!\nPlease come back later!");
             	//editStudent();
             	break;
             case 5:
+            	getchar();
+            	printf("We are still working on this!\nPlease come back later!");
             	//deleteStudent();
             	break;
             case 6:
