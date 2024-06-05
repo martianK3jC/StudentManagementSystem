@@ -5,18 +5,7 @@ main.o
 student_management_system.layout
 student_management_system.exe
 Makefile.win
-.vscode/
+.vscode
 manage_student.h.gch
 student.h.gch
-<<<<<<< HEAD
-add_Student.h.gch
-clear_Screen.h.gch
-mainMenu.h.gch
-
-
-
-
-
-=======
-.vscode/
->>>>>>> 4b22c22e52452a4cb4063f9267440c5be69ee949
+ui.h.gch
