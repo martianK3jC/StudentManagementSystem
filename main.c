@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <conio.h>
 
-//#include "manage_student.h"
+#include "manage_student.h"
 #include "ui.h"
-//#include "add_Student.h"
+#include "add_Student.h"
 #include "clear_Screen.h"
 
 int main(void) {
