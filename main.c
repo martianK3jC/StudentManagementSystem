@@ -1,89 +1,59 @@
-#include <windows.h>
-<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
-
-#include "manage_student.h"
-#include "ui.h"
-#include "add_Student.h"
-#include "clear_Screen.h"
-
-int main(void) {
-    int choice = 0;
-
-    while (choice != 6) {
-=======
-#include <unistd.h>
-#include <windows.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
+#include <string.h>
 #include "student.h"
-#include "manage_student.h"
-#include "ui.h"
 
-int main() {
-    struct Student students[100];
-    int studentCount = 0;
-    int choice;
-
-    while (1) {
->>>>>>> 4b22c22e52452a4cb4063f9267440c5be69ee949
-        mainMenu();
-        printf("\nEnter your choice: ");
-        scanf("%d", &choice);
+void addStudent() {
+    char addAnother;
+    
+    FILE *fp; //fp = file pointer
+    struct Student info;
+    
+    do {
+        printf("Add Student\n\n");
+    
+		//This part opens the .txt file to place inputted info
+	    fp = fopen("student_info.txt", "a");
         
-        clearScreen();
-
-<<<<<<< HEAD
-       switch(choice){
-			case 1:
-				addStudent();
-				break;
-			case 2:
-				//	displayStudent();
-				break;
-			case 3:
-				//	searchStudent();
-				break;
-			case 4:
-				//	editStudent();
-				break;
-			case 5:
-				//	deleteStudent();
-				break;
-			case 6:
-				printf("Thank you for using this system! ☺");
-				exit(0);
-				break;
-			default:
-				getchar();
-				printf("Invalid Choice, idiot!\n");
-				break;		
-	}
-        printf("\nPress enter to continue: ");
-        getchar();
-        clearScreen();
-=======
-        switch (choice) {
-            case 1:
-                addStudent(students, &studentCount);
-                
-                break;
-            case 2:
-                viewStudents(students, studentCount);
-                break;
-            case 7:
-                exit(0);
-            default:
-                printf("Invalid choice! Please try again.\n");
+        if (fp == NULL) {
+            fprintf(stderr, "Can't open file\n");
+            return;
         }
-        printf("Pressed any key to continue...\n\n");
-        getch();
->>>>>>> 4b22c22e52452a4cb4063f9267440c5be69ee949
-    }
-
-    return 0;
+        
+        //Input Student Information
+       	printf("Enter first name: ");
+		scanf(" %[^\n]%*c", info.firstName); 
+        printf("Enter last name: ");
+		scanf(" %[^\n]%*c", info.lastName);
+        printf("Enter Student Id: ");
+        scanf("%d", &info.id);
+        printf("Enter degree: ");
+        scanf(" %[^\n]%*c", info.degree);
+        printf("Enter age: ");
+        scanf("%d", &info.age);
+        printf("Enter address: ");
+        scanf(" %[^\n]%*c", info.address);
+        printf("Enter email: ");
+        scanf(" %[^\n]%*c", info.email);
+        
+    	// Write to the text file in a readable format
+        fprintf(fp, "First Name: %s\n", info.firstName);
+        fprintf(fp, "Last Name: %s\n", info.lastName);
+        fprintf(fp, "Student ID: %d\n", info.id);
+        fprintf(fp, "Degree: %s\n", info.degree);
+        fprintf(fp, "Age: %d\n", info.age);
+        fprintf(fp, "Address: %s\n", info.address);
+        fprintf(fp, "Email: %s\n", info.email);
+        fprintf(fp, "------------------------\n");
+        
+        
+        fclose(fp);
+        
+        printf("\nSTUDENT ADDED SUCCESSFULLY!\n");
+        
+        
+        printf("\nWould you like to add another student? (y/n): ");
+        scanf(" %c", &addAnother);
+        
+    } while (addAnother == 'y' || addAnother == 'Y');
 }
