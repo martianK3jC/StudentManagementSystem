@@ -39,11 +39,11 @@ int main(void) {
 				exit(0);
 				break;
 			default:
+				getchar();
 				printf("Invalid Choice, idiot!\n");
 				break;		
 	}
         printf("\nPress enter to continue: ");
-        getchar();
         getchar();
         clearScreen();
     }

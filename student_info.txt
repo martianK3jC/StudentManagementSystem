@@ -1,0 +1,8 @@
+First Name: Kesha
+Last Name: Ceniza
+Student ID: 23
+Degree: Cpe
+Age: 19
+Address: wonderland
+Email: eh@gmail.com
+------------------------
