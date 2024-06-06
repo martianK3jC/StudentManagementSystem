@@ -12,8 +12,8 @@ int main(void) {
     int choice;
 
     while (choice != 6) {
-        mainMenu();
-        printf("\nEnter your choice: ");
+        menu();
+        
         scanf("%d", &choice);
         
         clearScreen();
@@ -23,23 +23,15 @@ int main(void) {
                 addStudent(students, &studentCount);                
                 break;
             case 2:
-            	getchar();
-            	printf("We are still working on this!\nPlease come back later!");
-                //displayStudents(students, studentCount);
+                displayStudents(students, studentCount);
                 break;
             case 3:
-            	getchar();
-            	printf("We are still working on this!\nPlease come back later!");
             	//searchStudent();
             	break;
             case 4:
-            	getchar();
-            	printf("We are still working on this!\nPlease come back later!");
             	//editStudent();
             	break;
             case 5:
-            	getchar();
-            	printf("We are still working on this!\nPlease come back later!");
             	//deleteStudent();
             	break;
             case 6:
@@ -48,11 +40,11 @@ int main(void) {
                 break;
             default:
             	getchar();
-                printf("Huey! Invalid choice (T^T)\nPlease try again.\n");
+                printf("Invalid choice! Please try again.\n");
                 break;
         }
         
-        printf("\nPress enter to continue: ");
+        printf("\nPress any key to continue: ");
         getchar();
 		clearScreen();
     }
