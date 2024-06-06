@@ -5,5 +5,9 @@ main.o
 student_management_system.layout
 student_management_system.exe
 Makefile.win
+.vscode
+manage_student.h.gch
+student.h.gch
+ui.h.gch
 .vscode/
 *.gch
