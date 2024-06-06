@@ -11,3 +11,4 @@ student.h.gch
 ui.h.gch
 .vscode/
 *.gch
+student_info.txt
