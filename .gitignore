@@ -9,3 +9,5 @@ Makefile.win
 manage_student.h.gch
 student.h.gch
 ui.h.gch
+.vscode/
+*.gch
