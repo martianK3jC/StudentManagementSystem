@@ -61,13 +61,13 @@ void addStudent(struct Student students[], int *studentCount) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
 void displayStudents(struct Student students[], int studentCount) {
     FILE *fp;
-    char line[256];
-    fp = fopen("student_info.txt", "r");
+    
+	char line[256];
+    
+	fp = fopen("student_info.txt", "r");
+    
     if (fp == NULL) {
         fprintf(stderr, "Can't open file\n");
         return;
@@ -80,7 +80,5 @@ void displayStudents(struct Student students[], int studentCount) {
     }
 
     fclose(fp);
-    printf("\nPress any key to continue...");
-    getchar(); 
 
 }
