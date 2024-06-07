@@ -63,20 +63,24 @@ void addStudent(struct Student students[], int *studentCount) {
 
 
 
+
 void displayStudents(struct Student students[], int studentCount) {
+    FILE *fp;
+    char line[256];
+    fp = fopen("student_info.txt", "r");
+    if (fp == NULL) {
+        fprintf(stderr, "Can't open file\n");
+        return;
+    }
+
     printf("List of Students:\n\n");
 
-    for (int i = 0; i < studentCount; i++) {
-        printf("Name: %s\n", students[i].firstName);
-        printf("Name: %s\n", students[i].lastName);
-        printf("Id: %d\n", students[i].id);
-        printf("Degree: %s\n", students[i].degree);
-		printf("Age: %d\n", students[i].age);
-        printf("Address: %s\n", students[i].address);
-        printf("Email: %s\n", students[i].email);
-        printf("\n");
+    while (fgets(line, sizeof(line), fp)) {
+        printf("%s", line);
     }
+
+    fclose(fp);
+    printf("\nPress any key to continue...");
+    getchar(); 
+
 }
-
-
-

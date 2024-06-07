@@ -44,8 +44,8 @@ int main(void) {
                 break;
         }
         
-        printf("\nPress any key to continue: ");
-        getchar();
+        printf("\nPress any key to exit...");
+        getch();
 		clearScreen();
     }
 
