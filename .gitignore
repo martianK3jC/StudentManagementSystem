@@ -8,3 +8,5 @@ Makefile.win
 manage_student.h.gch
 student.h.gch
 .vscode/
+student_info.txt
+ui.h.gch
