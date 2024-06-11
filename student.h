@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 //student.h
+=======
+>>>>>>> origin/view-students
 #ifndef STUDENT_H
 #define STUDENT_H
 

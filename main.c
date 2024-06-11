@@ -1,4 +1,4 @@
-
+//main.c
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,6 +13,10 @@ int main(void) {
     int choice;
 
     while (choice != 6) {
+<<<<<<< HEAD
+    	
+=======
+>>>>>>> origin/view-students
         menu();
         
         scanf("%d", &choice);
@@ -28,15 +32,24 @@ int main(void) {
                 break;
             case 3:
             	//searchStudent();
-            	printf("We're still working on this!");
+<<<<<<< HEAD
+            	printf("We're still working on this!\n");
             	break;
             case 4:
             	//editStudent();
-            	printf("We're still working on this!");
+            	printf("We're still working on this!\n");
             	break;
             case 5:
             	//deleteStudent();
-            	printf("We're still working on this!");
+            	printf("We're still working on this!\n");
+=======
+            	break;
+            case 4:
+            	//editStudent();
+            	break;
+            case 5:
+            	//deleteStudent();
+>>>>>>> origin/view-students
             	break;
             case 6:
             	printf("Thank you for using this system!");
@@ -44,15 +57,25 @@ int main(void) {
                 break;
             default:
             	getchar();
-                printf("Invalid choice! Please try again.\n");
+<<<<<<< HEAD
+            	printf("\033[0;31mInvalid choice! Please try again.\n\033[0m");
                 break;
+                
         }
         
         printf("Press any key to exit: ");
         getch();
 		clearScreen();
-		
-		printf("Peekaboo");
+	
+=======
+                printf("Invalid choice! Please try again.\n");
+                break;
+        }
+        
+        printf("\nPress any key to continue: ");
+        getchar();
+		clearScreen();
+>>>>>>> origin/view-students
     }
 
     return 0;

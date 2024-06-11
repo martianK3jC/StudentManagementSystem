@@ -5,8 +5,14 @@ main.o
 student_management_system.layout
 student_management_system.exe
 Makefile.win
+.vscode
 manage_student.h.gch
 student.h.gch
+student_management_system.dev
 .vscode/
 student_info.txt
 ui.h.gch
+.vscode/
+*.gch
+student_info.txt
+update_feature_branches.sh
