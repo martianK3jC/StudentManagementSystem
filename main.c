@@ -51,6 +51,8 @@ int main(void) {
         printf("Press any key to exit: ");
         getch();
 		clearScreen();
+		
+		printf("Peekaboo");
     }
 
     return 0;
