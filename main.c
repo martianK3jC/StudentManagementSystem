@@ -1,3 +1,4 @@
+
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,12 +28,15 @@ int main(void) {
                 break;
             case 3:
             	//searchStudent();
+            	printf("We're still working on this!");
             	break;
             case 4:
             	//editStudent();
+            	printf("We're still working on this!");
             	break;
             case 5:
             	//deleteStudent();
+            	printf("We're still working on this!");
             	break;
             case 6:
             	printf("Thank you for using this system!");
@@ -44,7 +48,7 @@ int main(void) {
                 break;
         }
         
-        printf("\nPress any key to exit...");
+        printf("Press any key to exit: ");
         getch();
 		clearScreen();
     }
