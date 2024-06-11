@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-//student.h
-=======
->>>>>>> origin/view-students
+// student.h
+
 #ifndef STUDENT_H
 #define STUDENT_H
 
@@ -15,4 +13,4 @@ struct Student {
     char email[100];
 };
 
-#endif 
+#endif
