@@ -1,4 +1,4 @@
-//12-06-2024
+//06-13-2024
 //ui.h
 #ifndef UI_H
 #define UI_H
@@ -48,7 +48,31 @@ void headerLine() {
     printf("\033[0m");
 }
 
-void headerLineGreen() {
+void redHeaderLine() {
+    printf("\033[0;31m");
+    printf("----");
+    printf("\033[0;35m");
+    printf("----");
+    printf("\033[1;35m");
+    printf("----");
+    printf("\033[1;31m");
+    printf("----");
+    printf("\033[1;37m");
+    printf("----");
+    printf("\033[1;37m");
+    printf("---");
+    printf("\033[1;31m");
+    printf("----");
+    printf("\033[1;35m");
+    printf("----");
+    printf("\033[0;35m");
+    printf("----");
+    printf("\033[0;31m");
+    printf("----");
+    printf("\033[0m");
+}
+
+void greenHeaderLine() {
     printf("\033[0;32m");
     printf("----");
     printf("\033[1;32m");
@@ -77,6 +101,13 @@ void sideLine(int x, int yStart, int yEnd) {
     for (int y = yStart; y <= yEnd; y++) {
         gotoxy(x, y);
         printf("\033[0;34m|\033[0m");
+    }
+}
+
+void redSideLine(int x, int yStart, int yEnd) {
+    for (int y = yStart; y <= yEnd; y++) {
+        gotoxy(x, y);
+        printf("\033[0;31m|\033[0m");
     }
 }
 
@@ -245,7 +276,7 @@ void addAnotherStudentBox(){
     headerLine();
 			        
     //left side
-	sideLine(12, 4, 10);       
+	sideLine(12, 4, 9);       
 					
    	//top-right corner
    	gotoxy(52, 3); 	
@@ -256,7 +287,7 @@ void addAnotherStudentBox(){
    	printf("\033[0;34m\u250C\033[0m");        
 			        
 	//right side
-	sideLine(52, 4, 10); 
+	sideLine(52, 4, 9); 
 			        
 	// footer line
     gotoxy(13, 10);
@@ -271,4 +302,35 @@ void addAnotherStudentBox(){
 	printf("\033[0;34m\u2518\033[0m");
 }
 
+void exitBox(){
+	//red-violet header line
+    gotoxy(13, 3);
+    redHeaderLine();
+			        
+    //red left side
+	redSideLine(12, 4, 8);       
+					
+   	//red top-right corner
+   	gotoxy(52, 3); 	
+   	printf("\033[0;31m\u2510\033[0m\n");	 
+			        
+   	//red top-left corner
+   	gotoxy(12, 3);
+   	printf("\033[0;31m\u250C\033[0m");        
+			        
+	//red right side
+	redSideLine(52, 4, 8); 
+			        
+	//red-violet footer line
+    gotoxy(13, 9);
+    redHeaderLine();      	
+			
+	//red bottom-left corner
+   	gotoxy(12, 9);
+	printf("\033[0;31m\u2514\033[0m");
+					   			   
+   	//red bottom-right corner
+	gotoxy(52, 9);
+	printf("\033[0;31m\u2518\033[0m");
+}
 #endif

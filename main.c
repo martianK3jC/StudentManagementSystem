@@ -1,4 +1,4 @@
-
+//06-13-2024
 //main.c
 #include <windows.h>
 #include <stdio.h>
@@ -27,35 +27,55 @@ int main(void) {
             case 1:
                 addStudent(students, &studentCount);                
                 break;
+                
             case 2:
                 displayStudents(students, studentCount);
                 break;
+                
             case 3:
             	//searchStudent();
-            	printf("We're still working on this!\n");
-            	break;
+            	printf("\033[0;33mWe're still working on this!\n\033[0m");
+				printf("Press any key to exit: ");
+		        getch();
+				clearScreen();             	
+				break;
+				
             case 4:
-            	//editStudent();
-            	printf("We're still working on this!\n");
-            	break;
+            	//updateStudent();
+            	printf("\033[1;34mWe're still working on this!\n\033[0m");
+				printf("Press any key to exit: ");
+		        getch();
+				clearScreen();             	
+				break;
+				
             case 5:
             	//deleteStudent();
-            	printf("We're still working on this!\n");
-            	break;
+            	printf("\033[0;35mWe're still working on this!\n\033[0m");
+				printf("Press any key to exit: ");
+		        getch();
+				clearScreen();             	
+				break;
+				
             case 6:
-            	printf("Thank you for using this system!");
+            	exitBox();
+            	gotoxy(16,6);
+            	printf("\033[1;35mTHANK YOU FOR USING THIS SYSTEM!\n\033[0m");	
+            	gotoxy(15,10);
                 exit(0);
-                break;
+				break;
+                                
             default:
             	getchar();
+            	gotoxy(13, 4);
             	printf("\033[0;31mInvalid choice! Please try again.\n\033[0m");
+		        gotoxy(13, 5);
+				printf("Press any key to exit: ");
+		        getch();
+				clearScreen();           	
                 break;
                 
         }
         
-        printf("Press any key to exit: ");
-        getch();
-		clearScreen();
 	
     }
 

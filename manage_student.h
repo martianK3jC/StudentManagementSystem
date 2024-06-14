@@ -1,4 +1,4 @@
-//12-06-2024
+//06-13-2024
 //manage_student.h
 #ifndef MANAGE_STUDENT_H
 #define MANAGE_STUDENT_H
@@ -127,8 +127,14 @@ void addStudent(struct Student students[], int *studentCount) {
 
 	    //press-any key to exit (position)
 	    gotoxy(21,8);
+		printf("Press any key to exit: ");
+		getch();
+		clearScreen(); 
 
     } while (addAnother == 'y' || addAnother == 'Y');
+    
+    
+    
     
 }
 
@@ -146,7 +152,7 @@ void displayStudents(struct Student students[], int studentCount) {
         return;
     }
 	gotoxy(13, 3);
-    headerLineGreen();
+    greenHeaderLine();
     
 	gotoxy(23, 5);
     printf("\033[0;32mLIST OF STUDENTS:\n\n\033[0m");	
@@ -160,7 +166,9 @@ void displayStudents(struct Student students[], int studentCount) {
     }
 	
 	gotoxy(14, counter);
-
+	printf("\033[1;32mPress any key to exit: \033[0m");
+	getch();
+	clearScreen(); 
     fclose(fp);
 
 }
