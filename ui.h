@@ -1,4 +1,4 @@
-//06-13-2024
+//06-15-2024
 //ui.h
 #ifndef UI_H
 #define UI_H
@@ -11,13 +11,13 @@ void setConsoleToUtf8() {
     SetConsoleOutputCP(CP_UTF8);
 }
 
-//hmmm this one triggers flying lines
-//void gotoxy(int x, int y) {
-//    COORD coord;
-//    coord.X = x;
-//    coord.Y = y;
-//    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-//}
+void clearScreen() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
 
 //this one below definitely works
 void gotoxy(int x, int y) {
@@ -96,6 +96,30 @@ void greenHeaderLine() {
     printf("\033[0m");
 }
 
+void yellowHeaderLine() {
+    printf("\033[0;33m");
+    printf("----");
+    printf("\033[0;33m");
+    printf("----");
+    printf("\033[1;33m");
+    printf("----");
+    printf("\033[1;33m");
+    printf("----");
+    printf("\033[1;37m");
+    printf("----");
+    printf("\033[1;37m");
+    printf("---");
+    printf("\033[1;33m");
+    printf("----");
+    printf("\033[1;33m");
+    printf("----");
+    printf("\033[0;33m");
+    printf("----");
+    printf("\033[0;33m");
+    printf("----");
+    printf("\033[0m");
+}
+
 
 void sideLine(int x, int yStart, int yEnd) {
     for (int y = yStart; y <= yEnd; y++) {
@@ -111,103 +135,11 @@ void redSideLine(int x, int yStart, int yEnd) {
     }
 }
 
-void menu(){
-    setConsoleToUtf8();
-    //left border
-    sideLine(12, 4, 23);
-    
-    //top-left corner
-    gotoxy(12, 3);
-    printf("\033[0;34m┌\033[0m");
-    
-    //header line
-    gotoxy(13, 3);
-    headerLine();
-    
-    //top-right corner
-    gotoxy(52, 3); 
-    printf("\033[0;34m┐\033[0m");
-    
-   
-    gotoxy(20, 5);
-    printf("\033[1;33mSTUDENT MANAGEMENT SYSTEM\033[0m");
-
-    
-    gotoxy(27, 6);
-    printf("\033[0;30mMain Menu\033[0m");
-    gotoxy(16, 8);
-    printf("\033[0;36m[1] Add New Student\033[0m");
-    gotoxy(16, 10);
-    printf("\033[0;32m[2] Display Student\033[0m");
-    gotoxy(16, 12);
-    printf("\033[0;33m[3] Search Student\033[0m");
-    gotoxy(16, 14);
-    printf("\033[1;34m[4] Update Student Information\033[0m");
-    gotoxy(16, 16);
-    printf("\033[0;35m[5] Delete Student/s\033[0m");
-    gotoxy(16, 18);
-    printf("\033[0;31m[6] Exit\033[0m");
-    gotoxy(22, 21);
-    printf("ENTER YOUR CHOICE: ");
-    
-    //bottom-left corner
-    gotoxy(12, 24);
-    printf("\033[0;34m└\033[0m");
-    
-    //footer line
-    gotoxy(13, 24);
-    headerLine();
-    
-    //bottom-right corner
-    gotoxy(52, 24);
-    printf("\033[0;34m┘\033[0m");
-    
-    //right border
-    sideLine(52, 4, 23);
-	
-	gotoxy(41, 21);
-}
-
-
-void clearScreen() {
-    #ifdef _WIN32
-        system("cls");
-    #else
-        system("clear");
-    #endif
-}
-
-
-void addStudentBox(){
-		// header line
-        gotoxy(13, 3);
-        headerLine();
-        
-        //left side
-		sideLine(12, 4, 32);       
-		
-    	//top-right corner
-    	gotoxy(52, 3); 
-    	printf("\033[0;34m\u2510\033[0m\n");	 
-        
-    	//top-left corner
-    	gotoxy(12, 3);
-    	printf("\033[0;34m\u250C\033[0m");        
-        
-        //right side
-        sideLine(52, 4, 32); 
-        
-		// footer line
-        gotoxy(13, 32);
-        headerLine();      	
-
-  		//bottom-left corner
-    	gotoxy(12, 32);
-   		printf("\033[0;34m\u2514\033[0m");
-   
-    	//bottom-right corner
-    	gotoxy(52, 32);
-    	printf("\033[0;34m\u2518\033[0m");
+void yellowSideLine(int x, int yStart, int yEnd) {
+    for (int y = yStart; y <= yEnd; y++) {
+        gotoxy(x, y);
+        printf("\033[0;33m|\033[0m");
+    }
 }
 
 void printSAS(){
@@ -268,6 +200,94 @@ void printSAS(){
 		printf("!");
 		Sleep(60);
 		printf("\033[0m\n");
+}
+
+void menu(){
+    setConsoleToUtf8();
+    //left border
+    sideLine(12, 4, 23);
+    
+    //top-left corner
+    gotoxy(12, 3);
+    printf("\033[0;34m┌\033[0m");
+    
+    //header line
+    gotoxy(13, 3);
+    headerLine();
+    
+    //top-right corner
+    gotoxy(52, 3); 
+    printf("\033[0;34m┐\033[0m");
+    
+   //Display Menu
+    gotoxy(20, 5);
+    printf("STUDENT MANAGEMENT SYSTEM");
+    gotoxy(27, 6);
+    printf("\033[0;30mMain Menu\033[0m");
+    gotoxy(16, 8);
+    printf("\033[0;36m[1] Add New Student\033[0m");
+    gotoxy(16, 10);
+    printf("\033[0;32m[2] Display Student\033[0m");
+    gotoxy(16, 12);
+    printf("\033[0;33m[3] Search Student\033[0m");
+    gotoxy(16, 14);
+    printf("\033[1;34m[4] Update Student Information\033[0m");
+    gotoxy(16, 16);
+    printf("\033[0;35m[5] Delete Student/s\033[0m");
+    gotoxy(16, 18);
+    printf("\033[0;31m[6] Exit\033[0m");
+    gotoxy(22, 21);
+    printf("ENTER YOUR CHOICE: ");
+    
+    //bottom-left corner
+    gotoxy(12, 24);
+    printf("\033[0;34m└\033[0m");
+    
+    //footer line
+    gotoxy(13, 24);
+    headerLine();
+    
+    //bottom-right corner
+    gotoxy(52, 24);
+    printf("\033[0;34m┘\033[0m");
+    
+    //right border
+    sideLine(52, 4, 23);
+	
+	//Position cursor
+	gotoxy(41, 21);
+}
+
+void addStudentBox(){
+		// header line
+        gotoxy(13, 3);
+        headerLine();
+        
+        //left side
+		sideLine(12, 4, 32);       
+		
+    	//top-right corner
+    	gotoxy(52, 3); 
+    	printf("\033[0;34m\u2510\033[0m\n");	 
+        
+    	//top-left corner
+    	gotoxy(12, 3);
+    	printf("\033[0;34m\u250C\033[0m");        
+        
+        //right side
+        sideLine(52, 4, 32); 
+        
+		// footer line
+        gotoxy(13, 32);
+        headerLine();      	
+
+  		//bottom-left corner
+    	gotoxy(12, 32);
+   		printf("\033[0;34m\u2514\033[0m");
+   
+    	//bottom-right corner
+    	gotoxy(52, 32);
+    	printf("\033[0;34m\u2518\033[0m");
 }
 
 void addAnotherStudentBox(){
@@ -333,4 +353,38 @@ void exitBox(){
 	gotoxy(52, 9);
 	printf("\033[0;31m\u2518\033[0m");
 }
+
+void searchBox(){
+	//yellow vertical line
+	gotoxy(13, 3);
+    yellowHeaderLine();
+    
+    //yellow top-right corner
+   	gotoxy(52, 3); 	
+   	printf("\033[0;33m\u2510\033[0m\n");	 
+			        
+   	//yellow top-left corner
+   	gotoxy(12, 3);
+   	printf("\033[0;33m\u250C\033[0m"); 
+    
+    //yellow left side
+    yellowSideLine(12, 4, 18);
+    
+    //yellow right side
+    yellowSideLine(52, 4, 18);    
+
+    //yellow footer line
+	gotoxy(13, 19);
+    yellowHeaderLine();  
+    
+	//yellow bottom-left corner
+   	gotoxy(12, 19);
+	printf("\033[0;33m\u2514\033[0m");
+					   			   
+   	//yellow bottom-right corner
+	gotoxy(52, 19);
+	printf("\033[0;33m\u2518\033[0m");
+    
+}
+
 #endif

@@ -1,4 +1,4 @@
-//06-13-2024
+//06-15-2024
 //main.c
 #include <windows.h>
 #include <stdio.h>
@@ -12,10 +12,10 @@ int main(void) {
     struct Student students[100];
     int studentCount = 0;
     int choice;
+    
+    	SetConsoleTitle("Kesha's Student Management System");
 	
-	SetConsoleTitle("Kesha's Student Management System");
-	
-    while (choice != 6) {
+	while (choice != 6) {
     	
         menu();
         
@@ -33,11 +33,7 @@ int main(void) {
                 break;
                 
             case 3:
-            	//searchStudent();
-            	printf("\033[0;33mWe're still working on this!\n\033[0m");
-				printf("Press any key to exit: ");
-		        getch();
-				clearScreen();             	
+            	searchStudent(students, studentCount);            	
 				break;
 				
             case 4:
@@ -78,6 +74,7 @@ int main(void) {
         
 	
     }
+    
 
     return 0;
 }
