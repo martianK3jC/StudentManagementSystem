@@ -1,4 +1,4 @@
-//06-15-2024
+//06-19-2024
 //main.c
 #include <windows.h>
 #include <stdio.h>
@@ -37,19 +37,11 @@ int main(void) {
 				break;
 				
             case 4:
-            	//updateStudent();
-            	printf("\033[1;34mWe're still working on this!\n\033[0m");
-				printf("Press any key to exit: ");
-		        getch();
-				clearScreen();             	
+            	updateStudent(students, studentCount);            	
 				break;
 				
             case 5:
-            	//deleteStudent();
-            	printf("\033[0;35mWe're still working on this!\n\033[0m");
-				printf("Press any key to exit: ");
-		        getch();
-				clearScreen();             	
+            	deleteStudent(students, &studentCount); 
 				break;
 				
             case 6:
@@ -64,7 +56,7 @@ int main(void) {
             	getchar();
             	gotoxy(13, 4);
             	printf("\033[0;31mInvalid choice! Please try again.\n\033[0m");
-		        gotoxy(13, 5);
+		        gotoxy(13, 6);
 				printf("Press any key to exit: ");
 		        getch();
 				clearScreen();           	
