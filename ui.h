@@ -1,4 +1,4 @@
-//06-15-2024
+//06-19-2024
 //ui.h
 #ifndef UI_H
 #define UI_H
@@ -6,6 +6,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
+
+void clearInputBuffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) { }
+    
+}
 
 void setConsoleToUtf8() {
     SetConsoleOutputCP(CP_UTF8);
@@ -19,7 +25,6 @@ void clearScreen() {
     #endif
 }
 
-//this one below definitely works
 void gotoxy(int x, int y) {
     printf("\033[%d;%dH", y, x);
 }
